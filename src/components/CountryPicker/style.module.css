@@ -1,0 +1,13 @@
+.countrypickerContainer {
+  padding: 1em;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .countrypickerContainer {
+    width: 400px;
+  }
+}

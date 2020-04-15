@@ -1,0 +1,10 @@
+.graphContainer {
+  width: 90%;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .graphContainer {
+    width: 900px;
+  }
+}
