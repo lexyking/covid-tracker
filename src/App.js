@@ -56,7 +56,7 @@ const App = () => {
       </section>
       <section className={styles.graphContainer}>
         {console.log('dailydata', dailydata)}
-        <Graph dailydata={dailydata} />
+        <Graph dailyData={dailydata} />
       </section>
     </div>
   );
