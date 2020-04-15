@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from './components';
-import { fetchData } from './api';
+import { Card, Graph } from './components';
+import { fetchData, fetchDailyData } from './api';
 import styles from './styles.module.css';
 
 const App = () => {
   const [data, setData] = useState({});
+  const [dailydata, setDailyData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -15,9 +16,17 @@ const App = () => {
     getData();
   }, []);
 
+  useEffect(() => {
+    const getDailyData = async () => {
+      const data = await fetchDailyData();
+      setDailyData(data);
+    };
+
+    getDailyData();
+  }, []);
+
   return (
     <div className={styles.container}>
-      {console.log('data', data)}
       <h1>Covid-19 Tracker</h1>
       <section className={styles.cardsContainer}>
         {data && data.lastUpdate ? (
@@ -44,6 +53,10 @@ const App = () => {
             title='Deaths'
           />
         ) : null}
+      </section>
+      <section className={styles.graphContainer}>
+        {console.log('dailydata', dailydata)}
+        <Graph dailydata={dailydata} />
       </section>
     </div>
   );
