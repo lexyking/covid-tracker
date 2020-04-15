@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './style.module.css';
 
-const SearchInput = ({ search, searchResults, handleChange, className }) => {
+const SearchInput = ({
+  search,
+  searchResults,
+  handleChange,
+  className,
+  handleSearch,
+}) => {
   return (
     <section className={`${styles.container} ${className}`}>
       <input
@@ -13,9 +19,13 @@ const SearchInput = ({ search, searchResults, handleChange, className }) => {
         className={styles.input}
       />
       <button>Search</button>
-      {searchResults && search.length
-        ? searchResults.map((result) => <li>{result}</li>)
-        : null}
+      {searchResults && search.length ? (
+        <section className={styles.searchResults}>
+          {searchResults.map((result) => (
+            <li onClick={(e) => handleSearch(e)}>{result}</li>
+          ))}
+        </section>
+      ) : null}
     </section>
   );
 };

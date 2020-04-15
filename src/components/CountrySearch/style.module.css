@@ -1,1 +1,39 @@
+.container {
+  position: relative;
+}
 
+.searchResults {
+  position: absolute;
+  left: 18%;
+  background: white;
+  width: 46%;
+  border-radius: 10px;
+  text-align: left;
+  line-height: 2;
+}
+
+.searchResults > li {
+  list-style-type: none;
+  cursor: pointer;
+  padding-left: 1em;
+}
+
+.searchResults > li:hover {
+  background: rgba(100, 100, 100, 0.7);
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 584px) {
+  .searchResults {
+    left: 19%;
+    width: 47%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .searchResults {
+    width: 72%;
+    top: 35px;
+    left: 0;
+  }
+}

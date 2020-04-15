@@ -55,6 +55,22 @@ const App = () => {
     );
   };
 
+  const handleSearch = async (e) => {
+    let foundCountry = e.target.innerHTML.toLowerCase();
+    if (foundCountry.includes(' ')) {
+      console.log('with space', foundCountry.split(' ').join(''));
+      foundCountry = foundCountry.split(' ').join('');
+    }
+
+    setSearch(foundCountry);
+    setSearchResults('');
+    handleSelectChange(foundCountry);
+
+    // if (foundCountry.includes('('))
+
+    console.log('search', foundCountry);
+  };
+
   return (
     <section className={styles.container}>
       <Header />
@@ -99,6 +115,7 @@ const App = () => {
             className={styles.countrySearch}
             searchResults={searchResults}
             handleChange={(e) => handleChange(e)}
+            handleSearch={(e) => handleSearch(e)}
             search={search}
           />
         </section>
