@@ -57,10 +57,6 @@ const App = () => {
 
   const handleSearch = async (e) => {
     let foundCountry = e.target.innerHTML.toLowerCase();
-    if (foundCountry.includes(' ')) {
-      console.log('with space', foundCountry.split(' ').join(''));
-      foundCountry = foundCountry.split(' ').join('');
-    }
 
     setSearch(foundCountry);
     setSearchResults('');
