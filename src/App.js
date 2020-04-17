@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Graph, CountryPicker, Footer, Header } from './components';
-import { fetchData, fetchDailyData, fetchCountriesNames } from './api';
+import {
+  fetchData,
+  fetchDailyData,
+  fetchCountriesNames,
+  fetchNewsData,
+} from './api';
 import styles from './styles.module.css';
 import CountrySearch from './components/CountrySearch';
 
@@ -17,6 +22,7 @@ const App = () => {
       const data = await fetchData();
       setData(data);
     };
+    fetchNewsData();
 
     getData();
   }, []);
@@ -55,16 +61,12 @@ const App = () => {
     );
   };
 
-  const handleSearch = async (e) => {
+  const handleSearch = (e) => {
     let foundCountry = e.target.innerHTML.toLowerCase();
 
     setSearch(foundCountry);
     setSearchResults('');
     handleSelectChange(foundCountry);
-
-    // if (foundCountry.includes('('))
-
-    console.log('search', foundCountry);
   };
 
   return (

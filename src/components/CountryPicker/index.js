@@ -4,7 +4,7 @@ import styles from './style.module.css';
 const CountryPicker = ({ countriesNames, handleChange, className }) => {
   return (
     <section className={`${styles.countrypickerContainer} ${className}`}>
-      <label for='countries'>Select a Country</label>
+      <label htmlFor='countries'>Select a Country</label>
       <select onChange={(e) => handleChange(e.target.value)}>
         <option value='Global'>Global</option>
         {countriesNames

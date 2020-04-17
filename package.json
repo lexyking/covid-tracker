@@ -8,8 +8,6 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
-    "chartjs": "^0.3.24",
-    "classnames": "^2.2.6",
     "netlify-cli": "^2.46.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
@@ -37,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "canvas": "^2.6.1"
   }
 }

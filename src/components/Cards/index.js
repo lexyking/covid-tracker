@@ -5,8 +5,14 @@ import styles from './styles.module.css';
 
 const Card = ({ dataColor, data, title, lastUpdate }) => {
   return (
-    <section className={styles.container} data-color={dataColor}>
-      <h1 className={styles.title}>{title}</h1>
+    <section
+      className={styles.container}
+      data-color={dataColor}
+      data-testId='card'
+    >
+      <h1 className={styles.title} data-testId='title'>
+        {title}
+      </h1>
       {data.value ? (
         <CountUp
           className={styles.counter}
@@ -14,10 +20,13 @@ const Card = ({ dataColor, data, title, lastUpdate }) => {
           end={data.value}
           duration={2.5}
           separator='.'
+          data-testId='cardValue'
         />
       ) : null}
-      <h2 className={styles.date}>{new Date(lastUpdate).toDateString()}</h2>
-      <section className={styles.innerContainer}>
+      <h2 className={styles.date} data-testId='lastUpdate'>
+        {new Date(lastUpdate).toDateString()}
+      </h2>
+      <section className={styles.innerContainer} data-testId='containerSlider'>
         <h2>{data.value ? data.value : null}</h2>
         <h4>{getTheText(title)}</h4>
       </section>
